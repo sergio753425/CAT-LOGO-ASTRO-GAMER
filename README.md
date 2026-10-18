@@ -2,5 +2,6 @@
 
 Catálogo de consolas de Astro Gamer, Manizales (Local 9-33).
 
-- `index.html` es toda la página: productos, fotos y pedidos por WhatsApp (324 130 2844).
-- Se publica en Netlify. Cada cambio que se sube a la rama `main` actualiza el enlace.
+- `index.html` es la página: productos, precios y pedidos por WhatsApp (324 130 2844).
+- `img/` tiene las fotos de los productos. Cada nombre lleva una huella, así que una foto nueva siempre tiene un nombre nuevo.
+- Se publica en Netlify (https://astro-gamer.netlify.app). Cada cambio en la rama `main` actualiza el enlace.
