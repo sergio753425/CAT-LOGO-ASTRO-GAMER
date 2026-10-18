@@ -17,9 +17,6 @@
   --orange:#ff7a1f;
   --shine:rgba(255,255,255,.38);
   --sky:#6cc0ee;
-  --skin:#f2c29a;
-  --skin-2:#e48f78;
-  --lens:rgba(255,255,255,.18);
   --white:#ffffff;
   --on-space:#e8ecff;
   --on-space-muted:#a7b3e2;
@@ -47,7 +44,7 @@ p{margin:0}
 .btn svg,.icon-btn svg,.ico{width:1.15em;height:1.15em;flex:none}
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .logo{display:inline-block;flex:none;aspect-ratio:584/571;background-image:var(--logo);background-size:contain;background-repeat:no-repeat;background-position:center}
-.f-ink{fill:var(--ink)}.f-cream{fill:var(--cream)}.f-cream2{fill:var(--cream-2)}.f-red{fill:var(--red)}.f-yellow{fill:var(--yellow)}.f-skin{fill:var(--skin)}.f-skin2{fill:var(--skin-2)}.f-reddeep{fill:var(--red-deep)}.f-lens{fill:var(--lens)}.f-orange{fill:var(--orange)}.f-sky{fill:var(--sky)}.f-space{fill:var(--space)}.f-space2{fill:var(--space-2)}.f-white{fill:var(--white)}.f-none{fill:none}.art-acc{fill:var(--acc)}
+.f-ink{fill:var(--ink)}.f-cream{fill:var(--cream)}.f-cream2{fill:var(--cream-2)}.f-red{fill:var(--red)}.f-yellow{fill:var(--yellow)}.f-orange{fill:var(--orange)}.f-sky{fill:var(--sky)}.f-space{fill:var(--space)}.f-space2{fill:var(--space-2)}.f-white{fill:var(--white)}.f-none{fill:none}.art-acc{fill:var(--acc)}
 .s-ink{stroke:var(--ink)}.s-yellow{stroke:var(--yellow)}.s-cream{stroke:var(--cream)}.s-white{stroke:var(--white)}
 
 /* tipografía */
@@ -215,23 +212,11 @@ p{margin:0}
 
 /* burbuja de crédito */
 .bubble{position:fixed;z-index:45;left:calc(12px + env(safe-area-inset-left,0px));bottom:calc(12px + var(--dock,0px) + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;align-items:flex-start;gap:10px;max-width:calc(100vw - 24px - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px))}
-.bubble-card{position:relative;width:330px;max-width:100%;padding:0;background:var(--cream);color:var(--ink);border:3px solid var(--ink);border-radius:22px 22px 22px 6px;box-shadow:6px 6px 0 0 var(--yellow),6px 6px 0 3px var(--ink);transform-origin:bottom left;animation:pop .35s cubic-bezier(.2,1.4,.4,1) both}
-.bubble-close{position:absolute;z-index:3;top:-14px;right:-12px;width:36px;height:36px;box-shadow:2px 2px 0 var(--ink)}
-.bubble-sky{position:relative;height:104px;border-radius:19px 19px 0 0;border-bottom:3px solid var(--ink);background:radial-gradient(circle at 22% 30%,var(--star) 0 1px,transparent 1.7px) 0 0/40px 32px,radial-gradient(circle at 70% 70%,var(--star-warm) 0 1.2px,transparent 2px) 0 0/56px 42px,linear-gradient(180deg,var(--space-3),var(--space))}
-.bubble-sky .wizard{position:absolute;left:4px;bottom:0;width:128px;height:auto;overflow:visible;animation:wz-bob 3.6s ease-in-out infinite}
-.bubble-title{position:absolute;right:14px;bottom:14px;width:calc(100% - 146px);margin:0;font-family:var(--f-display);font-weight:900;font-style:italic;font-stretch:112%;font-size:1.36rem;line-height:1.02;color:var(--white);text-shadow:2px 2px 0 var(--red),3px 3px 0 var(--ink);text-wrap:balance}
-.bubble-title span{display:block;color:var(--yellow)}
-.bubble-body{padding:12px 16px 16px}
-.bubble-kicker{margin:0 0 6px;font-family:var(--f-display);font-weight:900;font-style:italic;font-stretch:115%;font-size:.9rem;text-transform:uppercase;color:var(--ink)}
+.bubble-card{position:relative;width:330px;max-width:100%;padding:16px;background:var(--cream);color:var(--ink);border:3px solid var(--ink);border-radius:22px 22px 22px 6px;box-shadow:6px 6px 0 0 var(--yellow),6px 6px 0 3px var(--ink);transform-origin:bottom left;animation:pop .35s cubic-bezier(.2,1.4,.4,1) both}
+.bubble-close{position:absolute;top:10px;right:10px;width:34px;height:34px}
+.bubble-kicker{margin:10px 0 8px;font-family:var(--f-display);font-weight:900;font-style:italic;font-stretch:115%;font-size:1rem;text-transform:uppercase;color:var(--ink)}
 .bubble .credit-mark{display:flex;width:100%;min-height:62px;padding:8px 14px;box-shadow:3px 3px 0 var(--red)}
 .bubble .credit-mark img{max-height:46px;max-width:100%}
-.wz-arm{transform-box:view-box;transform-origin:104px 128px;animation:wz-wave 2.8s ease-in-out infinite}
-.wz-glow{transform-box:fill-box;transform-origin:center;animation:wz-glow 1.4s ease-in-out infinite}
-.wz-mini{display:grid;place-items:center;flex:none;width:36px;height:36px;overflow:hidden;border-radius:50%;background:var(--space-2);border:2px solid var(--ink)}
-.wz-mini svg{display:block;width:40px;height:40px}
-@keyframes wz-bob{50%{transform:translateY(-3px)}}
-@keyframes wz-wave{0%,100%{transform:rotate(0)}40%{transform:rotate(-7deg)}70%{transform:rotate(3deg)}}
-@keyframes wz-glow{50%{transform:scale(1.35);opacity:.15}}
 .bubble .credit-word{font-size:1.25rem}
 .bubble-text{margin:12px 0 4px;font-weight:800;font-size:1rem;line-height:1.35}
 .bubble-note{margin-bottom:12px;font-size:.8rem;color:var(--paper-muted)}
@@ -239,12 +224,9 @@ p{margin:0}
 .bubble-pill .logo{width:34px}
 .bubble-pill b{font-family:var(--f-display);font-style:italic;font-stretch:110%;font-weight:900}
 @media (max-width:480px){
-  .bubble-card{width:300px}
-  .bubble-sky{height:96px}
-  .bubble-sky .wizard{width:118px}
-  .bubble-title{font-size:1.2rem;width:calc(100% - 134px)}
-  .bubble-body{padding:10px 14px 14px}
-  .bubble .credit-mark{min-height:56px}
+  .bubble-card{width:300px;padding:14px}
+  .bubble-kicker{margin:6px 0;font-size:.9rem}
+  .bubble .credit-mark{min-height:56px;padding:6px 12px}
   .bubble .credit-word{font-size:1.1rem}
   .bubble-text{margin:10px 0 4px;font-size:.92rem}
   .bubble-note{margin-bottom:10px;font-size:.76rem}
@@ -621,19 +603,14 @@ dialog.sheet::backdrop{background:var(--backdrop)}
 <aside class="bubble" id="bubble" aria-label="Crédito con Sistecrédito">
   <div class="bubble-card" id="bubble-card" hidden>
     <button class="icon-btn bubble-close" type="button" id="bubble-close" aria-label="Cerrar"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
-    <div class="bubble-sky">
-      <svg class="wizard" viewBox="0 0 160 170" aria-hidden="true" focusable="false"><path d="M10 170C12 142 28 122 50 114H92C114 122 130 142 132 170Z" class="f-sky s-ink" stroke-width="3.5" stroke-linejoin="round"/><g class="f-yellow"><path d="M30 145L32.1 147.9L35 150L32.1 152.1L30 155L27.9 152.1L25 150L27.9 147.9Z"/><path d="M118 152L119.7 154.3L122 156L119.7 157.7L118 160L116.3 157.7L114 156L116.3 154.3Z"/><circle cx="22" cy="162" r="2"/></g><ellipse cx="71" cy="96" rx="23" ry="19" class="f-skin s-ink" stroke-width="3.5"/><g class="f-cream s-ink" stroke-width="3"><circle cx="47" cy="90" r="8"/><circle cx="44" cy="101" r="7"/><circle cx="95" cy="90" r="8"/><circle cx="98" cy="101" r="7"/></g><path d="M46 103C41 119 44 136 54 149C60 157 66 162 71 165C76 162 82 157 88 149C98 136 101 119 96 103C88 116 54 116 46 103Z" class="f-cream s-ink" stroke-width="3.5" stroke-linejoin="round"/><path d="M60 125q2 11 7 19M71 127v22M82 125q-2 11-7 19" class="f-none s-ink" stroke-width="2" stroke-linecap="round" opacity=".28"/><g class="f-red" opacity=".28"><circle cx="54" cy="103" r="4.5"/><circle cx="88" cy="103" r="4.5"/></g><path d="M71 106C64 103 54 105 49 114C57 112 64 114 71 110C78 114 85 112 93 114C88 105 78 103 71 106Z" class="f-cream s-ink" stroke-width="3" stroke-linejoin="round"/><ellipse cx="71" cy="101" rx="7" ry="6" class="f-skin2 s-ink" stroke-width="3"/><g class="s-ink" stroke-width="2.6" stroke-linecap="round"><circle cx="61" cy="92" r="7.5" class="f-lens"/><circle cx="81" cy="92" r="7.5" class="f-lens"/><path d="M68.5 91.5q2.5-2.5 5 0M57 94q4-4.5 8 0M77 94q4-4.5 8 0" class="f-none"/></g><path d="M36 72C46 54 56 32 66 13C70 5 78 2 86 6C92 9 96 14 98 21C92 17 86 17 82 21C86 39 94 56 106 72Z" class="f-red s-ink" stroke-width="3.5" stroke-linejoin="round"/><path d="M40 64C60 58 84 58 102 64L105 71C86 65 60 65 37 71Z" class="f-yellow s-ink" stroke-width="2.5" stroke-linejoin="round"/><path d="M62 37l2.4 5.4 5.8.6-4.4 3.9 1.3 5.7-5.1-3-5.1 3 1.3-5.7-4.4-3.9 5.8-.6z" class="f-yellow"/><path d="M83 24a6.5 6.5 0 1 0 4.5 10.5a5 5 0 1 1-4.5-10.5z" class="f-cream"/><ellipse cx="71" cy="73" rx="50" ry="9" class="f-reddeep s-ink" stroke-width="3.5"/><g class="f-cream s-ink" stroke-width="2.2"><ellipse cx="60" cy="84" rx="8.5" ry="3.6" transform="rotate(-12 60 84)"/><ellipse cx="82" cy="84" rx="8.5" ry="3.6" transform="rotate(12 82 84)"/></g><g class="wz-arm"><circle class="wz-glow f-yellow" cx="156" cy="47" r="15" opacity=".35"/><path d="M129 114L154 52" class="f-none s-ink" stroke-width="5.5" stroke-linecap="round"/><path d="M156 34l3.5 8 8.6.8-6.5 5.7 2 8.4-7.6-4.5-7.6 4.5 2-8.4-6.5-5.7 8.6-.8z" class="f-yellow s-ink" stroke-width="2.2" stroke-linejoin="round"/><path d="M100 124C112 116 122 108 128 100L141 108C135 120 123 132 110 140Z" class="f-sky s-ink" stroke-width="3.5" stroke-linejoin="round"/><circle cx="135" cy="103" r="7.5" class="f-skin s-ink" stroke-width="3"/></g><g class="f-cream"><path class="twinkle" d="M140 17L142.1 19.9L145 22L142.1 24.1L140 27L137.9 24.1L135 22L137.9 19.9Z"/><path class="twinkle" style="animation-delay:-.8s" d="M124 36.6L125.4 38.6L127.4 40L125.4 41.4L124 43.4L122.6 41.4L120.6 40L122.6 38.6Z"/><path class="twinkle" style="animation-delay:-1.5s" d="M172 26.2L173.6 28.4L175.8 30L173.6 31.6L172 33.8L170.4 31.6L168.2 30L170.4 28.4Z"/></g></svg>
-      <p class="bubble-title">¡Magia <span>en cuotas!</span></p>
-    </div>
-    <div class="bubble-body">
-      <p class="bubble-kicker">Compra con</p>
-      <div class="credit-mark" data-credit-mark><span class="credit-word">Sistecrédito</span></div>
-      <p class="bubble-text" data-credit-promo>Consulta nuestras promociones al comprar con Sistecrédito.</p>
-      <p class="bubble-note" data-credit-note>Crédito sujeto a aprobación. Consulta las condiciones por WhatsApp.</p>
-      <a class="btn sm" data-wa="credit" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Consultar promociones</a>
-    </div>
+    <p class="eyebrow ink"><span data-brand-name>Astro Gamer</span> · Crédito</p>
+    <p class="bubble-kicker">Compra con</p>
+    <div class="credit-mark" data-credit-mark><span class="credit-word">Sistecrédito</span></div>
+    <p class="bubble-text" data-credit-promo>Consulta nuestras promociones al comprar con Sistecrédito.</p>
+    <p class="bubble-note" data-credit-note>Crédito sujeto a aprobación. Consulta las condiciones por WhatsApp.</p>
+    <a class="btn sm" data-wa="credit" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Consultar promociones</a>
   </div>
-  <button class="bubble-pill" type="button" id="bubble-pill" aria-expanded="false" aria-controls="bubble-card"><span class="wz-mini" aria-hidden="true"><svg viewBox="27 40 88 88" aria-hidden="true" focusable="false"><ellipse cx="71" cy="96" rx="23" ry="19" class="f-skin s-ink" stroke-width="3.5"/><g class="f-cream s-ink" stroke-width="3"><circle cx="47" cy="90" r="8"/><circle cx="44" cy="101" r="7"/><circle cx="95" cy="90" r="8"/><circle cx="98" cy="101" r="7"/></g><path d="M46 103C41 119 44 136 54 149C60 157 66 162 71 165C76 162 82 157 88 149C98 136 101 119 96 103C88 116 54 116 46 103Z" class="f-cream s-ink" stroke-width="3.5" stroke-linejoin="round"/><path d="M60 125q2 11 7 19M71 127v22M82 125q-2 11-7 19" class="f-none s-ink" stroke-width="2" stroke-linecap="round" opacity=".28"/><g class="f-red" opacity=".28"><circle cx="54" cy="103" r="4.5"/><circle cx="88" cy="103" r="4.5"/></g><path d="M71 106C64 103 54 105 49 114C57 112 64 114 71 110C78 114 85 112 93 114C88 105 78 103 71 106Z" class="f-cream s-ink" stroke-width="3" stroke-linejoin="round"/><ellipse cx="71" cy="101" rx="7" ry="6" class="f-skin2 s-ink" stroke-width="3"/><g class="s-ink" stroke-width="2.6" stroke-linecap="round"><circle cx="61" cy="92" r="7.5" class="f-lens"/><circle cx="81" cy="92" r="7.5" class="f-lens"/><path d="M68.5 91.5q2.5-2.5 5 0M57 94q4-4.5 8 0M77 94q4-4.5 8 0" class="f-none"/></g><path d="M36 72C46 54 56 32 66 13C70 5 78 2 86 6C92 9 96 14 98 21C92 17 86 17 82 21C86 39 94 56 106 72Z" class="f-red s-ink" stroke-width="3.5" stroke-linejoin="round"/><path d="M40 64C60 58 84 58 102 64L105 71C86 65 60 65 37 71Z" class="f-yellow s-ink" stroke-width="2.5" stroke-linejoin="round"/><path d="M62 37l2.4 5.4 5.8.6-4.4 3.9 1.3 5.7-5.1-3-5.1 3 1.3-5.7-4.4-3.9 5.8-.6z" class="f-yellow"/><path d="M83 24a6.5 6.5 0 1 0 4.5 10.5a5 5 0 1 1-4.5-10.5z" class="f-cream"/><ellipse cx="71" cy="73" rx="50" ry="9" class="f-reddeep s-ink" stroke-width="3.5"/><g class="f-cream s-ink" stroke-width="2.2"><ellipse cx="60" cy="84" rx="8.5" ry="3.6" transform="rotate(-12 60 84)"/><ellipse cx="82" cy="84" rx="8.5" ry="3.6" transform="rotate(12 82 84)"/></g></svg></span><span class="txt">Crédito <b>Sistecrédito</b></span><span class="sr-only">Ver promociones de crédito</span></button>
+  <button class="bubble-pill" type="button" id="bubble-pill" aria-expanded="false" aria-controls="bubble-card"><span class="logo" aria-hidden="true"></span><span class="txt">Crédito <b>Sistecrédito</b></span><span class="sr-only">Ver promociones de crédito</span></button>
 </aside>
 
 <div class="cmp-bar" id="cmp-bar" hidden>
