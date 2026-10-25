@@ -251,7 +251,38 @@ p{margin:0}
 @keyframes pop{from{transform:scale(.9) translateY(6px)}to{transform:none}}
 
 /* barra de comparar */
-.wa-fab{position:fixed;z-index:45;left:calc(12px + env(safe-area-inset-left,0px));bottom:calc(12px + var(--dock,0px) + env(safe-area-inset-bottom,0px));display:inline-flex;align-items:center;gap:10px;padding:9px 20px 9px 9px;border-radius:999px;background:linear-gradient(135deg,#2bd96b,#13a44a);color:#062a14;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);text-decoration:none;font-family:var(--f-body);font-weight:900;font-size:.95rem;line-height:1.1;max-width:calc(100vw - 24px);transform-origin:bottom left;animation:pop .35s cubic-bezier(.2,1.4,.4,1) both;transition:transform .12s ease,box-shadow .12s ease}
+.bubble{position:fixed;z-index:45;left:calc(12px + env(safe-area-inset-left,0px));bottom:calc(12px + var(--dock,0px) + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;align-items:flex-start;gap:10px;max-width:calc(100vw - 24px - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px))}
+.bubble-card{position:relative;width:330px;max-width:100%;padding:0;background:var(--cream);color:var(--ink);border:3px solid var(--ink);border-radius:22px 22px 22px 6px;box-shadow:6px 6px 0 0 var(--yellow),6px 6px 0 3px var(--ink);transform-origin:bottom left;animation:pop .35s cubic-bezier(.2,1.4,.4,1) both}
+.bubble-close{position:absolute;z-index:3;top:10px;right:10px;width:34px;height:34px}
+.bubble-card.has-art .bubble-close{top:-14px;right:-12px;width:36px;height:36px;box-shadow:2px 2px 0 var(--ink)}
+.bubble-art{overflow:hidden;border-radius:19px 19px 0 0;border-bottom:3px solid var(--ink);background:var(--art-bg)}
+.bubble-art img{display:block;width:100%;height:auto;aspect-ratio:1200/703}
+.bubble-body{padding:16px}
+.bubble-card.has-art .bubble-body{padding-top:12px}
+.bubble-card.has-art .bubble-body>.eyebrow{display:none}
+.bubble-card.has-art .bubble-kicker{margin-top:0}
+.bubble-kicker{margin:10px 0 8px;font-family:var(--f-display);font-weight:900;font-style:italic;font-stretch:115%;font-size:1rem;text-transform:uppercase;color:var(--ink)}
+.bubble .credit-mark{display:flex;width:100%;min-height:62px;padding:8px 14px;box-shadow:3px 3px 0 var(--red)}
+.bubble .credit-mark img{max-height:46px;max-width:100%}
+.bubble .credit-word{font-size:1.25rem}
+.bubble-text{margin:12px 0 4px;font-weight:800;font-size:1rem;line-height:1.35}
+.bubble-note{margin-bottom:12px;font-size:.8rem;color:var(--paper-muted)}
+.bubble-pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 6px;border-radius:999px;background:var(--yellow);color:var(--ink);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--red);font:inherit;font-weight:900;font-size:.88rem;line-height:1.1;cursor:pointer;transform-origin:bottom left;animation:pop .3s ease both}
+.bubble-pill .logo{width:34px}
+.bubble-pill b{font-family:var(--f-display);font-style:italic;font-stretch:110%;font-weight:900}
+@media (max-width:480px){
+  .bubble-card{width:300px}
+  .bubble-body{padding:14px}
+  .bubble-kicker{margin:6px 0;font-size:.9rem}
+  .bubble .credit-mark{min-height:56px;padding:6px 12px}
+  .bubble .credit-word{font-size:1.1rem}
+  .bubble-text{margin:10px 0 4px;font-size:.92rem}
+  .bubble-note{margin-bottom:10px;font-size:.76rem}
+}
+body.has-cmp .bubble-pill .txt{display:none}
+body.has-cmp .bubble-pill{padding-right:6px}
+@media (max-width:480px){.admin-row{grid-template-columns:48px minmax(0,1fr)}.admin-row .thumb{width:48px;height:48px}.row-actions{grid-column:1/-1;justify-content:flex-end}}
+.wa-fab{position:relative;display:inline-flex;align-items:center;gap:10px;padding:9px 20px 9px 9px;border-radius:999px;background:linear-gradient(135deg,#2bd96b,#13a44a);color:#062a14;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);text-decoration:none;font-family:var(--f-body);font-weight:900;font-size:.95rem;line-height:1.1;max-width:100%;transform-origin:bottom left;animation:pop .35s cubic-bezier(.2,1.4,.4,1) both;transition:transform .12s ease,box-shadow .12s ease}
 .wa-fab:hover{transform:translate(-1px,-1px);box-shadow:6px 6px 0 var(--ink)}
 .wa-fab:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
 .wa-fab:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
@@ -459,7 +490,6 @@ dialog.sheet::backdrop{background:var(--backdrop)}
         <h1 class="title">Tu próxima consola. <span class="l2">Tu próxima misión.</span></h1>
         <p class="lede">Nintendo Switch, PlayStation y Xbox originales. Explora, compara y pídela por WhatsApp. También puedes pagarla a cuotas con Sistecrédito.</p>
         <div class="cta-row">
-          <a class="btn yellow" href="#catalogo">Explorar consolas <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="btn launch" id="launch" href="#grid"><span class="launch-bg" aria-hidden="true"></span><span class="launch-label">Compra ahora</span>
           <svg class="rocket" viewBox="0 0 132 64" aria-hidden="true" focusable="false">
             <defs>
@@ -587,7 +617,22 @@ dialog.sheet::backdrop{background:var(--backdrop)}
   </div>
 </footer>
 
-<a class="wa-fab" id="wa-fab" data-wa="general" href="#" target="_blank" rel="noopener"><span class="wa-fab-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-chat"/></svg></span><span class="wa-fab-txt">Compra por <b>WhatsApp</b></span></a>
+<aside class="bubble" id="bubble" aria-label="Atajos de Astro Gamer">
+  <div class="bubble-card" id="bubble-card" hidden>
+    <button class="icon-btn bubble-close" type="button" id="bubble-close" aria-label="Cerrar"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+    <div class="bubble-art" id="bubble-art" hidden><img alt="" decoding="async"></div>
+    <div class="bubble-body">
+    <p class="eyebrow ink"><span data-brand-name>Astro Gamer</span> · Crédito</p>
+    <p class="bubble-kicker">Compra con</p>
+    <div class="credit-mark" data-credit-mark><span class="credit-word">Sistecrédito</span></div>
+    <p class="bubble-text" data-credit-promo>Consulta nuestras promociones al comprar con Sistecrédito.</p>
+    <p class="bubble-note" data-credit-note>Crédito sujeto a aprobación. Consulta las condiciones por WhatsApp.</p>
+    <a class="btn sm" data-wa="credit" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Consultar promociones</a>
+    </div>
+  </div>
+  <button class="bubble-pill" type="button" id="bubble-pill" aria-expanded="false" aria-controls="bubble-card"><span class="logo" aria-hidden="true"></span><span class="txt">Crédito <b>Sistecrédito</b></span><span class="sr-only">Ver promociones de crédito</span></button>
+  <a class="wa-fab" id="wa-fab" data-wa="general" href="#" target="_blank" rel="noopener"><span class="wa-fab-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-chat"/></svg></span><span class="wa-fab-txt">Compra por <b>WhatsApp</b></span></a>
+</aside>
 
 <div class="cmp-bar" id="cmp-bar" hidden>
   <span id="cmp-count">0 elegidos</span>
@@ -667,6 +712,7 @@ dialog.sheet::backdrop{background:var(--backdrop)}
       <div class="field full"><label for="b-band">Título de crédito</label><input id="b-band" maxlength="80" autocomplete="off"></div>
       <div class="field full"><label for="b-promo">Mensaje de la burbuja</label><input id="b-promo" maxlength="120" autocomplete="off"></div>
       <div class="field full"><label for="b-note">Condiciones del crédito</label><input id="b-note" maxlength="140" autocomplete="off"></div>
+      <label class="check full" for="b-bubble"><input type="checkbox" id="b-bubble">Abrir la burbuja de crédito cuando entran al catálogo</label>
       <div class="field full photo-field">
         <div class="logo-preview" id="b-logo-preview"></div>
         <div class="stack">
@@ -874,6 +920,13 @@ function applyBrand() {
   setText('[data-credit-note]', b.creditNote);
   setText('[data-wa-number]', prettyPhone());
   $$('[data-wa]').forEach((el) => { el.href = waLink((MSG[el.getAttribute('data-wa')] || MSG.general)()); });
+  const artBox = $('#bubble-art');
+  if (artBox) {
+    artBox.hidden = !b.creditArt;
+    $('#bubble-card').classList.toggle('has-art', !!b.creditArt);
+    const artImg = $('img', artBox);
+    if (b.creditArt && artImg.getAttribute('src') !== b.creditArt) artImg.src = b.creditArt;
+  }
   $$('[data-credit-mark]').forEach((el) => {
     el.textContent = '';
     if (b.creditLogo) {
@@ -1191,6 +1244,7 @@ function toggleCompare(id) {
   else {
     if (ui.compare.length >= 3) { toast('Puedes comparar hasta 3 productos.'); return; }
     ui.compare.push(id);
+    setBubble(false, false);
   }
   $$('.card').forEach((c) => { const t = $('.cmp-toggle', c); if (t) t.setAttribute('aria-pressed', String(ui.compare.includes(c.dataset.id))); });
   syncDetailCompare();
@@ -1231,6 +1285,17 @@ $('#cmp-table').addEventListener('click', (e) => {
   $('#dlg-compare').close(); openOrder(p);
 });
 
+/* burbuja */
+function setBubble(open, remember) {
+  $('#bubble-card').hidden = !open;
+  $('#bubble-pill').hidden = open;
+  $('#bubble-pill').setAttribute('aria-expanded', String(open));
+  if (remember) session.set('ag-bubble', open ? 'open' : 'closed');
+}
+$('#bubble-close').addEventListener('click', () => { setBubble(false, true); $('#bubble-pill').focus(); });
+$('#bubble-pill').addEventListener('click', () => { setBubble(true, true); $('#bubble-close').focus(); });
+$$('[data-open-bubble]').forEach((b) => b.addEventListener('click', () => { setBubble(true, true); $('#bubble-close').focus(); }));
+
 /* si un aviso ajeno a la página (por ejemplo, el del hosting) tapa la esquina de abajo, los botones flotantes suben */
 function dockAboveForeign() {
   let lift = 0;
@@ -1252,6 +1317,7 @@ $('#launch').addEventListener('click', (e) => {
   e.preventDefault();
   const btn = e.currentTarget;
   if (btn.classList.contains('is-go')) return;
+  setBubble(false, true);
   const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const go = () => $('#grid').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
   if (reduce) { go(); return; }
@@ -1374,18 +1440,21 @@ const BRAND_FIELDS = { 'b-name': 'name', 'b-wa': 'whatsapp', 'b-city': 'city', '
 function fillBrandForm() {
   const b = state.brand;
   Object.keys(BRAND_FIELDS).forEach((id) => { $('#' + id).value = b[BRAND_FIELDS[id]]; });
+  $('#b-bubble').checked = b.bubble;
   waHint();
   renderLogoPreview();
 }
 function waHint() { const n = digits($('#b-wa').value).length; $('#b-wa-hint').classList.toggle('bad', n !== 10 && n !== 12); }
 function onBrandInput(e) {
   const t = e.target;
-  if (BRAND_FIELDS[t.id]) state.brand[BRAND_FIELDS[t.id]] = t.value;
+  if (t.id === 'b-bubble') state.brand.bubble = t.checked;
+  else if (BRAND_FIELDS[t.id]) state.brand[BRAND_FIELDS[t.id]] = t.value;
   else return;
   if (t.id === 'b-wa') waHint();
   applyBrand(); updateDirty();
 }
 $('#tab-brand').addEventListener('input', onBrandInput);
+$('#b-bubble').addEventListener('change', onBrandInput);
 function renderLogoPreview() {
   const box = $('#b-logo-preview');
   box.innerHTML = state.brand.creditLogo ? '<img src="' + esc(state.brand.creditLogo) + '" alt="Logo de Sistecrédito">' : '<span>Sin logo</span>';
@@ -1625,6 +1694,11 @@ if (typeof $('#toast').showPopover !== 'function') $('#toast').hidden = true;
 decorateHero();
 applyBrand();
 renderGrid();
+setBubble(false, false);
+if (session.get('ag-bubble') === 'open') setBubble(true, false);
+else if (state.brand.bubble && !session.get('ag-bubble')) {
+  setTimeout(() => { if (!session.get('ag-bubble') && !ui.compare.length && !document.querySelector('dialog[open]')) setBubble(true, false); }, 2200);
+}
 initPlatform();
 })();
 </script>
