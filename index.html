@@ -229,6 +229,18 @@ p{margin:0}
 .wa-label{font-family:var(--f-display);font-stretch:75%;font-weight:800;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-space-muted)}
 .wa-num{font-family:var(--f-display);font-weight:900;font-style:italic;font-stretch:110%;font-size:1.35rem;color:var(--white);font-variant-numeric:tabular-nums;user-select:all;-webkit-user-select:all}
 
+.eyebrow-link{text-decoration:none;border-bottom:2px solid transparent;align-self:start}
+.eyebrow-link:hover{border-bottom-color:var(--yellow)}
+.visit{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,0) 62%);border-bottom:3px solid rgba(167,179,226,.22)}
+.visit .wrap{padding-block:44px 64px}
+.visit-lead{font-size:1.05rem}
+.visit-facts{width:100%;margin-top:6px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.visit-facts li{border-style:solid;border-color:rgba(167,179,226,.32);background:rgba(255,255,255,.045)}
+.visit-facts strong{color:var(--yellow)}
+.visit-cta{display:flex;flex-wrap:wrap;gap:12px}
+@media (max-width:420px){.visit-facts{grid-template-columns:minmax(0,1fr)}}
+.photo{max-width:600px;box-shadow:9px 9px 0 var(--sky),9px 9px 0 4px var(--ink)}
+
 /* pie */
 .foot{background:var(--ink);border-top:4px solid var(--yellow);box-shadow:inset 0 3px 0 var(--red)}
 .foot-grid{display:flex;flex-wrap:wrap;align-items:center;gap:16px 22px;padding-block:32px 104px}
@@ -459,7 +471,7 @@ dialog.sheet::backdrop{background:var(--backdrop)}
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <div class="hero-badge"><span class="halo" aria-hidden="true"></span><span class="logo" role="img" aria-label="Astro Gamer"></span></div>
-        <p class="eyebrow"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span data-place>Local físico en Manizales · <span class="nowrap">Local 9-33</span></span></p>
+        <a class="eyebrow eyebrow-link" href="#local"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span data-place>Local físico en Manizales · <span class="nowrap">Local 9-33</span></span></a>
         <h1 class="title">Tu próxima consola. <span class="l2">Tu próxima misión.</span></h1>
         <p class="lede">Nintendo Switch, PlayStation y Xbox originales. Explora, compara y pídela por WhatsApp. También puedes pagarla a cuotas con Sistecrédito.</p>
         <div class="cta-row">
@@ -526,6 +538,27 @@ dialog.sheet::backdrop{background:var(--backdrop)}
       <a class="btn" data-wa="credit" href="#" target="_blank" rel="noopener">Consultar promociones <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>
   </section>
+  <section class="visit" id="local" aria-labelledby="visit-title">
+    <div class="wrap visit-grid">
+      <figure class="photo"><span class="photo-img" role="img" aria-label="Local de Astro Gamer en Manizales con consolas en exhibición"></span><figcaption>¡Te esperamos!</figcaption></figure>
+      <div class="visit-copy">
+        <p class="eyebrow">Visítanos</p>
+        <h2 class="section-title" id="visit-title">Ven al local en <span data-city>Manizales</span>.</h2>
+        <p class="visit-lead">No somos solo una página: tenemos local físico. Entra, mira las consolas de cerca, pregunta lo que quieras y llévatela el mismo día. Nos especializamos en Nintendo Switch, y también manejamos PlayStation y Xbox.</p>
+        <ul class="why-grid visit-facts">
+          <li><span class="patch red"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><h3>Dónde estamos</h3><p><strong data-local>Local 9-33</strong>, Manizales, Caldas.</p></li>
+          <li><span class="patch yellow"><svg aria-hidden="true"><use href="#i-shield"/></svg></span><h3>Con garantía</h3><p>Todas nuestras consolas salen con garantía.</p></li>
+          <li><span class="patch sky"><svg aria-hidden="true"><use href="#i-card"/></svg></span><h3>Paga a cuotas</h3><p>Sistecrédito aquí mismo, en el local.</p></li>
+          <li><span class="patch cream"><svg aria-hidden="true"><use href="#i-truck"/></svg></span><h3>¿Estás lejos?</h3><p>Despachamos a cualquier ciudad del país.</p></li>
+        </ul>
+        <div class="wa-line"><span class="wa-label">WhatsApp</span><span class="wa-num" data-wa-number>324 130 2844</span><button class="btn sm cream" type="button" data-copy-number><svg aria-hidden="true"><use href="#i-copy"/></svg>Copiar</button></div>
+        <div class="visit-cta">
+          <a class="btn" data-wa="general" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Escríbenos por WhatsApp</a>
+          <a class="btn cream" href="#catalogo">Ver el catálogo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="catalog" id="catalogo" aria-labelledby="cat-title">
     <div class="wrap">
@@ -573,18 +606,6 @@ dialog.sheet::backdrop{background:var(--backdrop)}
     </div>
   </section>
 
-  <section class="visit" id="local" aria-labelledby="visit-title">
-    <div class="wrap visit-grid">
-      <figure class="photo"><span class="photo-img" role="img" aria-label="Local de Astro Gamer en Manizales con consolas en exhibición"></span><figcaption>¡Te esperamos!</figcaption></figure>
-      <div class="visit-copy">
-        <p class="eyebrow">Visítanos</p>
-        <h2 class="section-title" id="visit-title">Local físico en <span data-city>Manizales</span>.</h2>
-        <p>Nos especializamos en Nintendo Switch, pero también manejamos PlayStation y Xbox. Encuéntranos en el <strong data-local>Local 9-33</strong>.</p>
-        <div class="wa-line"><span class="wa-label">WhatsApp</span><span class="wa-num" data-wa-number>324 130 2844</span><button class="btn sm cream" type="button" data-copy-number><svg aria-hidden="true"><use href="#i-copy"/></svg>Copiar</button></div>
-        <a class="btn" data-wa="general" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Escríbenos por WhatsApp</a>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="foot">
