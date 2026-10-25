@@ -131,16 +131,9 @@ p{margin:0}
 @media (min-width:900px){.hero-badge{margin-bottom:20px}}
 
 /* franja de crédito */
-.credit{background:var(--yellow);color:var(--ink);border-block:4px solid var(--ink)}
-.credit-grid{display:grid;gap:14px 28px;align-items:center;padding-block:24px}
-@media (min-width:820px){.credit-grid{grid-template-columns:auto minmax(0,1fr) auto}}
 .credit-mark{display:inline-flex;align-items:center;justify-content:center;justify-self:start;min-height:58px;padding:10px 18px;background:var(--white);border:3px solid var(--ink);border-radius:16px;box-shadow:4px 4px 0 var(--red)}
 .credit-word{font-family:var(--f-display);font-weight:900;font-style:italic;font-stretch:112%;font-size:1.45rem;line-height:1;color:var(--ink)}
 .credit-mark img{display:block;max-height:48px;width:auto;max-width:230px}
-.credit-copy{min-width:0}
-.credit-copy h2{margin:.2em 0 .25em;font-family:var(--f-display);font-weight:900;font-style:italic;font-stretch:115%;font-size:clamp(1.35rem,4.6vw,2rem);line-height:1.05;text-transform:uppercase;text-wrap:balance}
-.credit-copy p:not(.eyebrow){font-weight:700;color:var(--paper-ink)}
-.credit .btn{justify-self:start}
 
 /* catálogo */
 .catalog .wrap{padding-block:46px 64px}
@@ -232,7 +225,7 @@ p{margin:0}
 
 .eyebrow-link{text-decoration:none;border-bottom:2px solid transparent;align-self:start}
 .eyebrow-link:hover{border-bottom-color:var(--yellow)}
-.visit{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,0) 62%);border-bottom:3px solid rgba(167,179,226,.22)}
+.visit{background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.055) 26%,rgba(255,255,255,0) 80%);border-bottom:3px solid rgba(167,179,226,.2)}
 .visit .wrap{padding-block:44px 64px}
 .visit-lead{font-size:1.05rem}
 .visit-facts{width:100%;margin-top:6px;grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -527,17 +520,6 @@ dialog.sheet::backdrop{background:var(--backdrop)}
     </div>
   </section>
 
-  <section class="credit" id="credito" aria-labelledby="credit-title">
-    <div class="wrap credit-grid">
-      <div class="credit-mark" data-credit-mark><span class="credit-word">Sistecrédito</span></div>
-      <div class="credit-copy">
-        <p class="eyebrow ink">Opciones de pago</p>
-        <h2 id="credit-title" data-credit-band>Llévatela a cuotas con Sistecrédito.</h2>
-        <p><span data-credit-promo>Consulta nuestras promociones al comprar con Sistecrédito.</span> <span data-credit-note>Crédito sujeto a aprobación. Consulta las condiciones por WhatsApp.</span></p>
-      </div>
-      <a class="btn" data-wa="credit" href="#" target="_blank" rel="noopener">Consultar promociones <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-    </div>
-  </section>
   <section class="visit" id="local" aria-labelledby="visit-title">
     <div class="wrap visit-grid">
       <figure class="photo"><span class="photo-img" role="img" aria-label="Local de Astro Gamer en Manizales con consolas en exhibición"><span class="photo-tint" aria-hidden="true"></span></span><figcaption>¡Te esperamos!</figcaption></figure>
