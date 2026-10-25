@@ -208,11 +208,6 @@ p{margin:0}
 
 /* local */
 .visit .wrap{padding-block:8px 72px}
-.visit-grid{display:grid;gap:34px;align-items:center}
-@media (min-width:900px){.visit-grid{grid-template-columns:minmax(0,.82fr) minmax(0,1fr);gap:56px;align-items:center}}
-.visit-copy{min-width:0;display:grid;gap:14px;justify-items:start}
-.visit-copy>p:not(.eyebrow){max-width:48ch;color:var(--on-space)}
-.visit-copy strong{color:var(--yellow)}
 .wa-line{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
 .wa-label{font-family:var(--f-display);font-stretch:75%;font-weight:800;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-space-muted)}
 .wa-num{font-family:var(--f-display);font-weight:900;font-style:italic;font-stretch:110%;font-size:1.35rem;color:var(--white);font-variant-numeric:tabular-nums;user-select:all;-webkit-user-select:all}
@@ -225,18 +220,12 @@ p{margin:0}
 .stars{display:block;width:clamp(176px,40vw,292px);height:auto;overflow:visible}
 .visit-claim{margin:0;max-width:21ch;font-family:var(--f-display);font-weight:900;font-style:italic;font-stretch:118%;text-transform:uppercase;font-size:clamp(1.6rem,5.2vw,3rem);line-height:1;color:var(--white);text-wrap:balance;text-shadow:3px 3px 0 var(--red),4px 4px 0 var(--ink)}
 .visit-claim .l2{display:block;margin-top:.12em;color:var(--yellow)}
-.visit-lead strong{color:var(--yellow)}
-.poster{position:relative;justify-self:center;width:100%;max-width:470px;margin:0;isolation:isolate}
+.visit-foot{display:grid;justify-items:center;gap:16px;margin-top:30px;text-align:center}
+.visit-foot .wa-line{justify-content:center}
+.visit-cta{justify-content:center}
+.poster{position:relative;width:100%;max-width:520px;margin:0 auto;isolation:isolate}
 .poster::before{content:"";position:absolute;inset:-7% -9%;z-index:-1;background:radial-gradient(54% 48% at 50% 46%,rgba(227,38,47,.34),rgba(36,67,158,.3) 56%,transparent 78%);filter:blur(46px)}
 .poster img{display:block;width:100%;height:auto;border-radius:20px;border:3px solid var(--ink);box-shadow:9px 9px 0 var(--red),9px 9px 0 4px var(--ink)}
-.trust-list{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:14px;width:100%}
-.trust-list li{display:flex;align-items:flex-start;gap:14px;min-width:0}
-.trust-list .patch{width:44px;height:44px;flex:none;box-shadow:2.5px 2.5px 0 var(--ink)}
-.trust-list .patch svg{width:22px;height:22px}
-.trust-list h3{margin:0 0 2px;font-family:var(--f-display);font-weight:900;font-style:italic;font-stretch:104%;font-size:1rem;line-height:1.1;text-transform:uppercase;color:var(--white)}
-.trust-list p{font-size:.92rem;color:var(--on-space-muted)}
-.trust-list strong{color:var(--yellow)}
-.visit-lead{font-size:1.05rem}
 .visit-cta{display:flex;flex-wrap:wrap;gap:12px}
 
 /* pie */
@@ -517,23 +506,12 @@ dialog.sheet::backdrop{background:var(--backdrop)}
         <svg class="stars" viewBox="-62 -62 572 132" aria-hidden="true" focusable="false"><defs><linearGradient id="st-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe489"/><stop offset=".46" stop-color="#f7c331"/><stop offset="1" stop-color="#cf930c"/></linearGradient><path id="st-s" d="M0.00-50.00 12.34-16.99 47.55-15.45 19.97 6.49 29.39 40.45 0.00 21.00-29.39 40.45-19.97 6.49-47.55-15.45-12.34-16.99Z"/></defs><g transform="translate(0 0)"><use href="#st-s" transform="translate(5 7)" fill="#080c26" opacity=".85"/><use href="#st-s" fill="url(#st-g)" stroke="#080c26" stroke-width="7" stroke-linejoin="round"/><path d="M-9-33a10 10 0 0 1 8-8" fill="none" stroke="#fffaf0" stroke-width="5" stroke-linecap="round" opacity=".6"/></g><g transform="translate(112 0)"><use href="#st-s" transform="translate(5 7)" fill="#080c26" opacity=".85"/><use href="#st-s" fill="url(#st-g)" stroke="#080c26" stroke-width="7" stroke-linejoin="round"/><path d="M-9-33a10 10 0 0 1 8-8" fill="none" stroke="#fffaf0" stroke-width="5" stroke-linecap="round" opacity=".6"/></g><g transform="translate(224 0)"><use href="#st-s" transform="translate(5 7)" fill="#080c26" opacity=".85"/><use href="#st-s" fill="url(#st-g)" stroke="#080c26" stroke-width="7" stroke-linejoin="round"/><path d="M-9-33a10 10 0 0 1 8-8" fill="none" stroke="#fffaf0" stroke-width="5" stroke-linecap="round" opacity=".6"/></g><g transform="translate(336 0)"><use href="#st-s" transform="translate(5 7)" fill="#080c26" opacity=".85"/><use href="#st-s" fill="url(#st-g)" stroke="#080c26" stroke-width="7" stroke-linejoin="round"/><path d="M-9-33a10 10 0 0 1 8-8" fill="none" stroke="#fffaf0" stroke-width="5" stroke-linecap="round" opacity=".6"/></g><g transform="translate(448 0)"><use href="#st-s" transform="translate(5 7)" fill="#080c26" opacity=".85"/><use href="#st-s" fill="url(#st-g)" stroke="#080c26" stroke-width="7" stroke-linejoin="round"/><path d="M-9-33a10 10 0 0 1 8-8" fill="none" stroke="#fffaf0" stroke-width="5" stroke-linecap="round" opacity=".6"/></g></svg>
         <h2 class="visit-claim" id="visit-title">No somos una tienda virtual. <span class="l2">Somos local físico y te brindamos seguridad.</span></h2>
       </div>
-      <div class="visit-grid">
-        <figure class="poster"><img src="img/somos-astro-gamer-55866b37.webp" width="1100" height="1950" alt="Somos Astro Gamer: tienda de consolas y juegos digitales, local físico en Manizales, Local 9-33. Nos especializamos en Nintendo Switch y también manejamos PlayStation y Xbox." decoding="async" loading="lazy"></figure>
-        <div class="visit-copy">
-          <p class="eyebrow">Comprar aquí es seguro</p>
-          <p class="visit-lead">Detrás de esta página hay un local de verdad, con vitrina, mostrador y gente que te atiende. Puedes venir, mirar la consola, probarla y llévartela el mismo día.</p>
-          <ul class="trust-list">
-          <li><span class="patch red"><svg aria-hidden="true"><use href="#i-store"/></svg></span><div><h3>Local que puedes visitar</h3><p>Estamos en el <strong data-local>Local 9-33</strong>, en <span data-city>Manizales</span>. Ven cuando quieras.</p></div></li>
-          <li><span class="patch yellow"><svg aria-hidden="true"><use href="#i-badge"/></svg></span><div><h3>Consolas con garantía</h3><p>Todas salen con garantía y factura. Si algo pasa, sabes dónde encontrarnos.</p></div></li>
-          <li><span class="patch sky"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><div><h3>Sin pagos por adelantado</h3><p>No te pedimos datos de tarjeta por la web. Acuerdas todo por WhatsApp o en el local.</p></div></li>
-          <li><span class="patch cream"><svg aria-hidden="true"><use href="#i-card"/></svg></span><div><h3>Pagos y cuotas en el local</h3><p>Todos los medios de pago, y cuotas con Sistecrédito firmadas aquí mismo.</p></div></li>
-          <li><span class="patch red"><svg aria-hidden="true"><use href="#i-truck"/></svg></span><div><h3>Envíos a todo Colombia</h3><p>Si estás lejos, despachamos con guía y te compartimos el seguimiento.</p></div></li>
-          </ul>
-          <div class="wa-line"><span class="wa-label">WhatsApp</span><span class="wa-num" data-wa-number>324 130 2844</span><button class="btn sm cream" type="button" data-copy-number><svg aria-hidden="true"><use href="#i-copy"/></svg>Copiar</button></div>
-          <div class="visit-cta">
-            <a class="btn" data-wa="general" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Escríbenos por WhatsApp</a>
-            <a class="btn cream" href="#catalogo">Ver el catálogo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </div>
+      <figure class="poster"><img src="img/somos-astro-gamer-55866b37.webp" width="1100" height="1950" alt="Somos Astro Gamer: tienda de consolas y juegos digitales, local físico en Manizales, Local 9-33. Nos especializamos en Nintendo Switch y también manejamos PlayStation y Xbox." decoding="async" loading="lazy"></figure>
+      <div class="visit-foot">
+        <div class="wa-line"><span class="wa-label">WhatsApp</span><span class="wa-num" data-wa-number>324 130 2844</span><button class="btn sm cream" type="button" data-copy-number><svg aria-hidden="true"><use href="#i-copy"/></svg>Copiar</button></div>
+        <div class="visit-cta">
+          <a class="btn" data-wa="general" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Escríbenos por WhatsApp</a>
+          <a class="btn cream" href="#catalogo">Ver el catálogo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </div>
