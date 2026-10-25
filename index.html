@@ -227,12 +227,13 @@ p{margin:0}
 .eyebrow-link:hover{border-bottom-color:var(--yellow)}
 .visit{background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.055) 26%,rgba(255,255,255,0) 80%);border-bottom:3px solid rgba(167,179,226,.2)}
 .visit .wrap{padding-block:44px 64px}
+.visit-head{display:grid;justify-items:center;gap:16px;margin-bottom:38px;text-align:center}
+.stars{display:block;width:clamp(176px,40vw,292px);height:auto;overflow:visible}
+.visit-claim{margin:0;max-width:21ch;font-family:var(--f-display);font-weight:900;font-style:italic;font-stretch:118%;text-transform:uppercase;font-size:clamp(1.6rem,5.2vw,3rem);line-height:1;color:var(--white);text-wrap:balance;text-shadow:3px 3px 0 var(--red),4px 4px 0 var(--ink)}
+.visit-claim .l2{display:block;margin-top:.12em;color:var(--yellow)}
+.visit-lead strong{color:var(--yellow)}
 .visit-lead{font-size:1.05rem}
-.visit-facts{width:100%;margin-top:6px;grid-template-columns:repeat(2,minmax(0,1fr))}
-.visit-facts li{border-style:solid;border-color:rgba(167,179,226,.32);background:rgba(255,255,255,.045)}
-.visit-facts strong{color:var(--yellow)}
 .visit-cta{display:flex;flex-wrap:wrap;gap:12px}
-@media (max-width:420px){.visit-facts{grid-template-columns:minmax(0,1fr)}}
 
 /* pie */
 .foot{background:var(--ink);border-top:4px solid var(--yellow);box-shadow:inset 0 3px 0 var(--red)}
@@ -521,22 +522,22 @@ dialog.sheet::backdrop{background:var(--backdrop)}
   </section>
 
   <section class="visit" id="local" aria-labelledby="visit-title">
-    <div class="wrap visit-grid">
-      <figure class="photo"><span class="photo-img" role="img" aria-label="Local de Astro Gamer en Manizales con consolas en exhibición"><span class="photo-tint" aria-hidden="true"></span></span><figcaption>¡Te esperamos!</figcaption></figure>
-      <div class="visit-copy">
-        <p class="eyebrow">Visítanos</p>
-        <h2 class="section-title" id="visit-title">Ven al local en <span data-city>Manizales</span>.</h2>
-        <p class="visit-lead">No somos solo una página: tenemos local físico. Entra, mira las consolas de cerca, pregunta lo que quieras y llévatela el mismo día. Nos especializamos en Nintendo Switch, y también manejamos PlayStation y Xbox.</p>
-        <ul class="why-grid visit-facts">
-          <li><span class="patch red"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><h3>Dónde estamos</h3><p><strong data-local>Local 9-33</strong>, Manizales, Caldas.</p></li>
-          <li><span class="patch yellow"><svg aria-hidden="true"><use href="#i-shield"/></svg></span><h3>Con garantía</h3><p>Todas nuestras consolas salen con garantía.</p></li>
-          <li><span class="patch sky"><svg aria-hidden="true"><use href="#i-card"/></svg></span><h3>Paga a cuotas</h3><p>Sistecrédito aquí mismo, en el local.</p></li>
-          <li><span class="patch cream"><svg aria-hidden="true"><use href="#i-truck"/></svg></span><h3>¿Estás lejos?</h3><p>Despachamos a cualquier ciudad del país.</p></li>
-        </ul>
-        <div class="wa-line"><span class="wa-label">WhatsApp</span><span class="wa-num" data-wa-number>324 130 2844</span><button class="btn sm cream" type="button" data-copy-number><svg aria-hidden="true"><use href="#i-copy"/></svg>Copiar</button></div>
-        <div class="visit-cta">
-          <a class="btn" data-wa="general" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Escríbenos por WhatsApp</a>
-          <a class="btn cream" href="#catalogo">Ver el catálogo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <div class="wrap">
+      <div class="visit-head">
+        <svg class="stars" viewBox="-62 -62 572 132" aria-hidden="true" focusable="false"><defs><linearGradient id="st-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe489"/><stop offset=".46" stop-color="#f7c331"/><stop offset="1" stop-color="#cf930c"/></linearGradient><path id="st-s" d="M0.00-50.00 12.34-16.99 47.55-15.45 19.97 6.49 29.39 40.45 0.00 21.00-29.39 40.45-19.97 6.49-47.55-15.45-12.34-16.99Z"/></defs><g transform="translate(0 0)"><use href="#st-s" transform="translate(5 7)" fill="#080c26" opacity=".85"/><use href="#st-s" fill="url(#st-g)" stroke="#080c26" stroke-width="7" stroke-linejoin="round"/><path d="M-9-33a10 10 0 0 1 8-8" fill="none" stroke="#fffaf0" stroke-width="5" stroke-linecap="round" opacity=".6"/></g><g transform="translate(112 0)"><use href="#st-s" transform="translate(5 7)" fill="#080c26" opacity=".85"/><use href="#st-s" fill="url(#st-g)" stroke="#080c26" stroke-width="7" stroke-linejoin="round"/><path d="M-9-33a10 10 0 0 1 8-8" fill="none" stroke="#fffaf0" stroke-width="5" stroke-linecap="round" opacity=".6"/></g><g transform="translate(224 0)"><use href="#st-s" transform="translate(5 7)" fill="#080c26" opacity=".85"/><use href="#st-s" fill="url(#st-g)" stroke="#080c26" stroke-width="7" stroke-linejoin="round"/><path d="M-9-33a10 10 0 0 1 8-8" fill="none" stroke="#fffaf0" stroke-width="5" stroke-linecap="round" opacity=".6"/></g><g transform="translate(336 0)"><use href="#st-s" transform="translate(5 7)" fill="#080c26" opacity=".85"/><use href="#st-s" fill="url(#st-g)" stroke="#080c26" stroke-width="7" stroke-linejoin="round"/><path d="M-9-33a10 10 0 0 1 8-8" fill="none" stroke="#fffaf0" stroke-width="5" stroke-linecap="round" opacity=".6"/></g><g transform="translate(448 0)"><use href="#st-s" transform="translate(5 7)" fill="#080c26" opacity=".85"/><use href="#st-s" fill="url(#st-g)" stroke="#080c26" stroke-width="7" stroke-linejoin="round"/><path d="M-9-33a10 10 0 0 1 8-8" fill="none" stroke="#fffaf0" stroke-width="5" stroke-linecap="round" opacity=".6"/></g></svg>
+        <h2 class="visit-claim" id="visit-title">No somos una tienda virtual. <span class="l2">Somos local físico y te brindamos seguridad.</span></h2>
+      </div>
+      <div class="visit-grid">
+        <figure class="photo"><span class="photo-img" role="img" aria-label="Local de Astro Gamer en Manizales con consolas en exhibición"><span class="photo-tint" aria-hidden="true"></span></span><figcaption>¡Te esperamos!</figcaption></figure>
+        <div class="visit-copy">
+          <p class="eyebrow">Visítanos</p>
+          <p class="visit-lead">Entra, mira las consolas de cerca, pregunta lo que quieras y llévatela el mismo día. Nos especializamos en Nintendo Switch, y también manejamos PlayStation y Xbox. Encuéntranos en el <strong data-local>Local 9-33</strong>, en <span data-city>Manizales</span>.</p>
+          <p class="visit-lead">Todas nuestras consolas salen con garantía, puedes pagarlas a cuotas con Sistecrédito aquí mismo y, si estás lejos, despachamos a cualquier ciudad del país.</p>
+          <div class="wa-line"><span class="wa-label">WhatsApp</span><span class="wa-num" data-wa-number>324 130 2844</span><button class="btn sm cream" type="button" data-copy-number><svg aria-hidden="true"><use href="#i-copy"/></svg>Copiar</button></div>
+          <div class="visit-cta">
+            <a class="btn" data-wa="general" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Escríbenos por WhatsApp</a>
+            <a class="btn cream" href="#catalogo">Ver el catálogo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
         </div>
       </div>
     </div>
